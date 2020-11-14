@@ -21,7 +21,7 @@ class LocationList extends React.Component {
         axios.get("https://happyyuwei.xyz:17615/rest/observer/location/all", {
             // 将token放在header里面
             headers: {
-                "token": "173n3ui4D4EFvFFJInfurovv"
+                "token": localStorage.getItem("token")
             }
         })
             // 请求成功，获取到数据

@@ -40,6 +40,7 @@ class Logon extends React.Component{
             // 将用户名密码保存在本地
             localStorage.setItem("username",username);
             localStorage.setItem("userpassword",userpassword);
+            localStorage.setItem("token",data.token)
             window.location.href="/"
 
         })
