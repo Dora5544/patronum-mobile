@@ -1,9 +1,7 @@
 import React from "react"
-import { List, WhiteSpace, WingBlank } from 'antd-mobile';
+import { List} from 'antd-mobile';
 import axios from "axios";
 
-const Item = List.Item;
-const Brief = Item.Brief;
 
 class LocationList extends React.Component {
     // 将位置列表保存在state,初始值为空
@@ -14,7 +12,7 @@ class LocationList extends React.Component {
 
     componentDidMount = () => {
         // 判断本地是否存有用户名和密码，如果没有，就跳转到登录页面进行登录
-        if (localStorage.getItem("username") == undefined && localStorage.getItem("userpassword") == undefined) {
+        if (localStorage.getItem("username") === undefined && localStorage.getItem("userpassword") === undefined) {
             window.location.href = "/#/logon"
         }
         // 使用get从后台获取数据

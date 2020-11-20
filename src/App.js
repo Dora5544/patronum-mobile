@@ -12,7 +12,7 @@ function App() {
       <Route path="/" exact component={LocationList} />
       {/* 跳转到登录页面 */}
       <Route path="/logon" exact component={Logon} />
-    </Router> 
+    </Router>
   );
 }
 
