@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       {/* 初始页面显示在list列表页面 */}
-      <Route path="/" exact component={LocationList} />
+      <Route path="/list" exact component={LocationList} />
       {/* 跳转到登录页面 */}
       <Route path="/logon" exact component={Logon} />
     </Router>
