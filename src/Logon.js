@@ -41,7 +41,7 @@ class Logon extends React.Component{
             localStorage.setItem("username",username);
             localStorage.setItem("userpassword",userpassword);
             localStorage.setItem("token",data.token)
-            window.location.href="/#/list"
+            window.location.href="/patronum/#/list"
 
         })
         .catch(function(error){

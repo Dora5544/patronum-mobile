@@ -13,7 +13,7 @@ class LocationList extends React.Component {
     componentDidMount = () => {
         // 判断本地是否存有用户名和密码，如果没有，就跳转到登录页面进行登录
         if (localStorage.getItem("username") === undefined && localStorage.getItem("userpassword") === undefined) {
-            window.location.href = "/#/logon"
+            window.location.href = "/patronum/#/logon"
         }
         // 使用get从后台获取数据
         axios.get("https://happyyuwei.xyz:17615/rest/observer/location/all", {
