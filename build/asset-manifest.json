@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.504473a8.chunk.css",
-    "main.js": "/static/js/main.395aa9ab.chunk.js",
-    "main.js.map": "/static/js/main.395aa9ab.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0d3e55c8.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0d3e55c8.js.map",
-    "static/css/2.438752f9.chunk.css": "/static/css/2.438752f9.chunk.css",
-    "static/js/2.6876270a.chunk.js": "/static/js/2.6876270a.chunk.js",
-    "static/js/2.6876270a.chunk.js.map": "/static/js/2.6876270a.chunk.js.map",
-    "static/js/3.0c538e4e.chunk.js": "/static/js/3.0c538e4e.chunk.js",
-    "static/js/3.0c538e4e.chunk.js.map": "/static/js/3.0c538e4e.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.438752f9.chunk.css.map": "/static/css/2.438752f9.chunk.css.map",
-    "static/css/main.504473a8.chunk.css.map": "/static/css/main.504473a8.chunk.css.map",
-    "static/js/2.6876270a.chunk.js.LICENSE.txt": "/static/js/2.6876270a.chunk.js.LICENSE.txt"
+    "main.css": "./patronmu/static/css/main.9f372e7f.chunk.css",
+    "main.js": "./patronmu/static/js/main.5a363256.chunk.js",
+    "main.js.map": "./patronmu/static/js/main.5a363256.chunk.js.map",
+    "runtime-main.js": "./patronmu/static/js/runtime-main.0cc597fc.js",
+    "runtime-main.js.map": "./patronmu/static/js/runtime-main.0cc597fc.js.map",
+    "static/css/2.438752f9.chunk.css": "./patronmu/static/css/2.438752f9.chunk.css",
+    "static/js/2.a36615a8.chunk.js": "./patronmu/static/js/2.a36615a8.chunk.js",
+    "static/js/2.a36615a8.chunk.js.map": "./patronmu/static/js/2.a36615a8.chunk.js.map",
+    "static/js/3.0c538e4e.chunk.js": "./patronmu/static/js/3.0c538e4e.chunk.js",
+    "static/js/3.0c538e4e.chunk.js.map": "./patronmu/static/js/3.0c538e4e.chunk.js.map",
+    "index.html": "./patronmu/index.html",
+    "static/css/2.438752f9.chunk.css.map": "./patronmu/static/css/2.438752f9.chunk.css.map",
+    "static/css/main.9f372e7f.chunk.css.map": "./patronmu/static/css/main.9f372e7f.chunk.css.map",
+    "static/js/2.a36615a8.chunk.js.LICENSE.txt": "./patronmu/static/js/2.a36615a8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0d3e55c8.js",
+    "static/js/runtime-main.0cc597fc.js",
     "static/css/2.438752f9.chunk.css",
-    "static/js/2.6876270a.chunk.js",
-    "static/css/main.504473a8.chunk.css",
-    "static/js/main.395aa9ab.chunk.js"
+    "static/js/2.a36615a8.chunk.js",
+    "static/css/main.9f372e7f.chunk.css",
+    "static/js/main.5a363256.chunk.js"
   ]
 }
