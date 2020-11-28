@@ -1,49 +1,87 @@
 /* 整个登录页面大框 */
-.logon{
-   margin-top: 25vh; 
-   text-align: center;
+.logon {
+  margin-top: 25vh;
+  text-align: center;
 }
+
 /* 登录页面最上面的title */
-.title{
-  font-size: 23px;
+.title {
+  font-size  : 23px;
   font-weight: bolder;
 }
+
 /* list列表整个大的框 */
-.content{
-    width:100vw;
-    height:10vh;
-    margin-top:20px;
-    margin-left:10px;
-    display: flex;
-    justify-content: space-around;
+.content {
+  width          : 100vw;
+  height         : 10vh;
+  margin-top     : 20px;
+  margin-left    : 10px;
+  display        : flex;
+  justify-content: space-around;
 }
+
 /* 左边放图片 */
-.img{
-  height:100%;
-  width:25%;
+.img {
+  height: 100%;
+  width : 25%;
 }
+
 /* 右边放nickname和address */
-.name-address{
-  height:100%;
-  width:70%;
-  display: flex;
+.name-address {
+  height         : 100%;
+  width          : 70%;
+  display        : flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction : column;
 }
+
 /* nickname */
-.nickname{
-  width:100%;
-  height:50%;
-  font-size: 16px;
+.nickname {
+  width      : 100%;
+  height     : 50%;
+  font-size  : 16px;
   font-weight: bolder;
 }
+
 /* address */
-.address{
-  widows: 100%;
-  height:50%;
+.address {
+  widows   : 100%;
+  height   : 50%;
   font-size: 14px;
 }
 
-.time{
+.time {
   margin-left: 250px;
+}
+
+
+
+/* boot页面样式 */
+.boot-background {
+  width           : 100vw;
+  height          : 100vh;
+  background-image: url("./drawable/boot_background.jpg");
+  background-size : cover;
+}
+
+.boot-title {
+  padding-top: 10%;
+  text-align : center;
+  color      : white;
+  font-weight: bolder;
+  font-size  : 50px;
+}
+
+.boot-subtitle {
+  color      : white;
+  font-weight: bold;
+  text-align : center;
+}
+
+.boot-detail{
+  position: fixed;
+  color      : white;
+  font-weight: bold;
+  left: 30%;
+  bottom: 5%;
 }

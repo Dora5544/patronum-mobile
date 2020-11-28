@@ -5,13 +5,25 @@ class BootPage extends React.Component {
 
 
     componentDidMount = () => {
-        // 使用get从后台获取数据
+
+        //wait three minutes and then move to list
+        setTimeout(() => {
+            window.location.href="/patronum/#/list"
+        }, 3000)
     }
 
     render = () => {
-        return <>
-            <LocationList></LocationList>
-        </>
+        return <div className="boot-background">
+            <div className="boot-title">
+                PATRONUM
+            </div>
+            <div className="boot-subtitle">
+                网页版
+            </div>
+            <div className="boot-detail">
+                @丁小小茹 @蝙蝙蝠侠 作品
+            </div>
+        </div>
     }
 }
 
