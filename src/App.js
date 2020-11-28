@@ -3,7 +3,7 @@ import './App.css';
 import { Logon } from "./Logon.js"
 import { LocationList } from "./List.js"
 // 使用路由跳转页面
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route} from 'react-router-dom'
 import { BootPage } from "./boot";
 
 function App() {

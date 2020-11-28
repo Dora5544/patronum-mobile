@@ -12,7 +12,7 @@ class LocationList extends React.Component {
 
     componentDidMount = () => {
         // 判断本地是否存有用户名和密码，如果没有，就跳转到登录页面进行登录
-        if (localStorage.getItem("username") === null && localStorage.getItem("userpassword") === null) {
+        if (localStorage.getItem("username") === null && localStorage.getItem("userpassword") === null && localStorage.getItem("token") === null) {
             window.location.href = "/patronum/#/logon"
         }
         // 使用get从后台获取数据
@@ -35,18 +35,63 @@ class LocationList extends React.Component {
             // 请求失败，打印出error
             .catch((error) => {
                 console.log(error)
+                alert("用户名或密码错误")
             })
     }
+
+    logout = () => {
+        localStorage.removeItem("token")
+        window.location.href = "/patronum/#/logon"
+    }
+
+    /**
+     * 将时间格式化成 HH:mm， 如果是昨天，则使用昨天；如果是更早时间，仅仅显示日期、
+     * @param {} time 
+     */
+    formatTime = (time) => {
+        let year = parseInt(time.split(" ")[0].split("-")[0])
+        let month = parseInt(time.split(" ")[0].split("-")[1])
+        let day = parseInt(time.split(" ")[0].split("-")[2])
+
+
+        let totalDay = year * 365 + month * 12 + day
+
+        let hour = time.split(" ")[1].split(":")[0]
+        let minute = time.split(" ")[1].split(":")[1]
+
+        // calculate today
+        let today = new Date()
+
+        let todayYear = today.getFullYear()
+        let todayMonth = today.getMonth() + 1
+        let todayDay = today.getDate()
+
+
+        today = todayYear * 365 + todayMonth * 12 + todayDay
+
+        if (today === totalDay) {
+            return hour + ":" + minute
+        } else if ((today - totalDay) == 1) {
+            return "昨天"
+        } else {
+            return year + "-" + month + "-" + day
+        }
+
+
+        return time
+    }
+
     render = () => {
         let itemList = [];
         for (let i = 0; i < this.state.locations.length; i++) {
             let li = <div className="list-item" key={Math.random()}>
                 {/* 左边图片 */}
-                <div className="img"><img src={"https://happyyuwei.xyz:17615/rest/resource/image/" + this.state.locations[i].avatar} with="90%" height="90%" style={{ borderRadius: 10 }}></img></div>
+                <div className="img"><img src={"https://happyyuwei.xyz:17615/rest/resource/image/" + this.state.locations[i].avatar} with="90%" height="90%" style={{ borderRadius: 10 }} alt="not found"></img></div>
                 {/* 右边nickName和address */}
                 <div className="name-address" >
-                    <div className="nickname">
+                    <div className="name-time">
                         <div className="nickname">{this.state.locations[i].nickName}</div>
+                        <div className="location-time">{this.formatTime(this.state.locations[i].time)}</div>
                     </div>
                     <div className="address">
                         <div className="">{this.state.locations[i].ad + "," + this.state.locations[i].loc}</div>
@@ -56,7 +101,7 @@ class LocationList extends React.Component {
             itemList.push(li)
         }
         return (
-            <div class="list-background">
+            <div className="list-background">
                 <div style={{ width: "90vw" }}>
                     <div className="list-title-container">
                         <div className="list-title">
@@ -65,6 +110,9 @@ class LocationList extends React.Component {
                     </div>
                     <div>
                         {itemList}
+                    </div>
+                    <div className="list-footer" onClick={this.logout}>
+                        退出当前账户
                     </div>
                 </div>
             </div>

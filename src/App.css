@@ -11,6 +11,20 @@
   font-weight: bolder;
 }
 
+.logon-unlock-icon {
+  background-image: url(./drawable/unlock.png);
+  background-size : cover;
+  height          : 22px;
+  width           : 22px
+}
+
+.logon-user-icon {
+  background-image: url(./drawable/user.png);
+  background-size : cover;
+  height          : 22px;
+  width           : 22px
+}
+
 /* 登录页面样式结束 =============================== */
 
 
@@ -40,6 +54,14 @@
   flex-direction : column;
 }
 
+/* name-address 的div内， 左边放nickname, 右边放时间 */
+.name-time {
+  width : 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
 /* nickname */
 .nickname {
   width      : 100%;
@@ -48,15 +70,17 @@
   font-weight: bolder;
 }
 
+.location-time {
+  color: gray;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 /* address */
 .address {
   widows   : 100%;
   height   : 50%;
   font-size: 14px;
-}
-
-.time {
-  margin-left: 250px;
 }
 
 .list-background {
@@ -75,15 +99,21 @@
   border-radius   : 15px;
   margin-top      : 5vh;
   margin-bottom   : 10vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display         : flex;
+  justify-content : center;
+  flex-direction  : column;
 }
 
 .list-title {
-  font-weight: bold;
-  font-size: 15px;
-  padding-left: 15px; 
+  font-weight : bold;
+  font-size   : 15px;
+  padding-left: 15px;
+}
+
+.list-footer {
+  color     : gray;
+  margin-top: 180px;
+  text-align: center;
 }
 
 /* 列表样式结束 ====================================== */
