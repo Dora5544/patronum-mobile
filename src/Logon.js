@@ -1,6 +1,6 @@
 import React from "react";
 import 'antd-mobile/dist/antd-mobile.css';
-import { Button, InputItem, WhiteSpace, WingBlank } from 'antd-mobile';
+import { Toast, Button, InputItem, WhiteSpace, WingBlank } from 'antd-mobile';
 import axios from "axios";
 
 
@@ -33,7 +33,7 @@ class Logon extends React.Component {
             "userId": username,
             "password": userpassword,
         })
-            .then(function (response) {
+            .then((response) => {
                 // 请求成功，保存返回数据
                 let data = response.data;
                 // console.log(data);
@@ -44,12 +44,19 @@ class Logon extends React.Component {
                 window.location.href = "/patronum/#/list"
 
             })
-            .catch(function (error) {
+            .catch((error) => {
                 // 登录失败，输出错误
                 console.log(error)
+                this.failLogonToast()
             });
 
     }
+
+    failLogonToast = () => {
+        Toast.fail("用户名或密码错误", 1);
+    }
+
+
     render = () => {
         return (
             <div className="logon">
