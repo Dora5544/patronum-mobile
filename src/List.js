@@ -36,7 +36,6 @@ class LocationList extends React.Component {
             // 请求失败，打印出error
             .catch((error) => {
                 console.log(error)
-                alert("用户名或密码错误")
             })
     }
 
@@ -84,7 +83,7 @@ class LocationList extends React.Component {
         let detailBody = <div className="list-loading">
             加载中...
             </div>
-
+            
         if (this.state.loading === false) {
             let itemList = [];
             for (let i = 0; i < this.state.locations.length; i++) {
