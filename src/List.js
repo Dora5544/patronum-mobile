@@ -1,11 +1,11 @@
 import React from "react"
-// import { List} from 'antd-mobile';
 import axios from "axios";
 
 
 class LocationList extends React.Component {
     // 将位置列表保存在state,初始值为空
     state = {
+        loading: true,
         locations: []
 
     }
@@ -29,6 +29,7 @@ class LocationList extends React.Component {
                 console.log(data)
                 // 当从后台获取到数据，将数据放到状态location李敏
                 this.setState({
+                    loading: false,
                     locations: data,
                 })
             })
@@ -71,34 +72,39 @@ class LocationList extends React.Component {
 
         if (today === totalDay) {
             return hour + ":" + minute
-        } else if ((today - totalDay) == 1) {
+        } else if ((today - totalDay) === 1) {
             return "昨天"
         } else {
             return year + "-" + month + "-" + day
         }
-
-
-        return time
     }
 
     render = () => {
-        let itemList = [];
-        for (let i = 0; i < this.state.locations.length; i++) {
-            let li = <div className="list-item" key={Math.random()}>
-                {/* 左边图片 */}
-                <div className="img"><img src={"https://happyyuwei.xyz:17615/rest/resource/image/" + this.state.locations[i].avatar} with="90%" height="90%" style={{ borderRadius: 10 }} alt="not found"></img></div>
-                {/* 右边nickName和address */}
-                <div className="name-address" >
-                    <div className="name-time">
-                        <div className="nickname">{this.state.locations[i].nickName}</div>
-                        <div className="location-time">{this.formatTime(this.state.locations[i].time)}</div>
-                    </div>
-                    <div className="address">
-                        <div className="">{this.state.locations[i].ad + "," + this.state.locations[i].loc}</div>
+
+        let detailBody = <div className="list-loading">
+            加载中...
+            </div>
+
+        if (this.state.loading === false) {
+            let itemList = [];
+            for (let i = 0; i < this.state.locations.length; i++) {
+                let li = <div className="list-item" key={Math.random()}>
+                    {/* 左边图片 */}
+                    <div className="img"><img src={"https://happyyuwei.xyz:17615/rest/resource/image/" + this.state.locations[i].avatar} with="90%" height="90%" style={{ borderRadius: 10 }} alt="not found"></img></div>
+                    {/* 右边nickName和address */}
+                    <div className="name-address" >
+                        <div className="name-time">
+                            <div className="nickname">{this.state.locations[i].nickName}</div>
+                            <div className="location-time">{this.formatTime(this.state.locations[i].time)}</div>
+                        </div>
+                        <div className="address">
+                            <div className="">{this.state.locations[i].ad + "," + this.state.locations[i].loc}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            itemList.push(li)
+                itemList.push(li)
+                detailBody = itemList
+            }
         }
         return (
             <div className="list-background">
@@ -109,7 +115,7 @@ class LocationList extends React.Component {
                         </div>
                     </div>
                     <div>
-                        {itemList}
+                        {detailBody}
                     </div>
                     <div className="list-footer" onClick={this.logout}>
                         退出当前账户
@@ -117,6 +123,7 @@ class LocationList extends React.Component {
                 </div>
             </div>
         )
+
     }
 }
 

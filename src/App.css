@@ -56,9 +56,9 @@
 
 /* name-address 的div内， 左边放nickname, 右边放时间 */
 .name-time {
-  width : 100%;
-  height: 50%;
-  display: flex;
+  width          : 100%;
+  height         : 50%;
+  display        : flex;
   justify-content: space-around;
 }
 
@@ -71,8 +71,8 @@
 }
 
 .location-time {
-  color: gray;
-  font-size: 14px;
+  color      : gray;
+  font-size  : 14px;
   font-weight: bold;
 }
 
@@ -114,6 +114,13 @@
   color     : gray;
   margin-top: 180px;
   text-align: center;
+}
+
+.list-loading {
+  color      : gray;
+  margin-top : 180px;
+  text-align : center;
+  font-weight: bold;
 }
 
 /* 列表样式结束 ====================================== */
