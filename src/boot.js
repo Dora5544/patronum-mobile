@@ -1,15 +1,14 @@
 import React from "react"
-import { LocationList } from "./List"
 
 class BootPage extends React.Component {
 
 
     componentDidMount = () => {
 
-        //wait three minutes and then move to list
+        //wait 5 seconds and then move to list
         setTimeout(() => {
             window.location.href="/patronum/#/list"
-        }, 3000)
+        }, 5000)
     }
 
     render = () => {

@@ -1,12 +1,12 @@
 import React from "react"
-import { List} from 'antd-mobile';
+// import { List} from 'antd-mobile';
 import axios from "axios";
 
 
 class LocationList extends React.Component {
     // 将位置列表保存在state,初始值为空
     state = {
-        locations:[]
+        locations: []
 
     }
 
@@ -23,26 +23,26 @@ class LocationList extends React.Component {
             }
         })
             // 请求成功，获取到数据
-            .then((response)=> {
+            .then((response) => {
                 // data是一个数组里面嵌套对象的形式
                 let data = response.data;
                 console.log(data)
                 // 当从后台获取到数据，将数据放到状态location李敏
                 this.setState({
-                    locations:data,
+                    locations: data,
                 })
             })
             // 请求失败，打印出error
-            .catch((error)=> {
+            .catch((error) => {
                 console.log(error)
             })
     }
     render = () => {
         let itemList = [];
         for (let i = 0; i < this.state.locations.length; i++) {
-            let li = <div className="content" key={Math.random()}>
+            let li = <div className="list-item" key={Math.random()}>
                 {/* 左边图片 */}
-                <div className="img"><img src={"https://happyyuwei.xyz:17615/rest/resource/image/"+this.state.locations[i].avatar} with="100%" height="100%"></img></div>
+                <div className="img"><img src={"https://happyyuwei.xyz:17615/rest/resource/image/" + this.state.locations[i].avatar} with="90%" height="90%" style={{ borderRadius: 10 }}></img></div>
                 {/* 右边nickName和address */}
                 <div className="name-address" >
                     <div className="nickname">
@@ -56,10 +56,18 @@ class LocationList extends React.Component {
             itemList.push(li)
         }
         return (
-
-            <List renderHeader={() => '我关心的人'} >
-                {itemList}
-            </List>
+            <div class="list-background">
+                <div style={{ width: "90vw" }}>
+                    <div className="list-title-container">
+                        <div className="list-title">
+                            我关心的人
+                        </div>
+                    </div>
+                    <div>
+                        {itemList}
+                    </div>
+                </div>
+            </div>
         )
     }
 }
